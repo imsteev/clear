@@ -5,8 +5,13 @@
 
 .screen {
     margin-top: 10%;
+    margin-bottom: 10%;
     margin-left: 10%;
 }
+.tracked {
+
+}
+
 .tracking {
     outline: none;
 }
@@ -18,15 +23,17 @@
 }
 
 .tracked-item {
-    .title {
 
+    .title {
+        
     }
 
     .carrier {
-
+        
     }
 
     .trackingid {
-        
+        color: rgb(236, 33, 60);
+        font-weight: bold;
     }
 }

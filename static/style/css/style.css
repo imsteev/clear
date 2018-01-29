@@ -3,6 +3,7 @@
 
 .screen {
   margin-top: 10%;
+  margin-bottom: 10%;
   margin-left: 10%; }
 
 .tracking {
@@ -12,5 +13,9 @@
   text-align: left; }
   .track-item-form input:focus, .track-item-form select {
     outline: none; }
+
+.tracked-item .trackingid {
+  color: #ec213c;
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

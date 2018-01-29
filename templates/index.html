@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Clear: Landing page</title>
+    <title>Clear</title>
     <link rel="stylesheet" type="text/css" href="/static/style/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -11,7 +11,7 @@
         <!-- A grey horizontal navbar that becomes vertical on small screens -->
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
             <!-- Links -->
-            <a class="navbar-brand" href="#">Clear</a>
+            <a class="navbar-brand" href="/">Clear</a>
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <a class="nav-link" href="#">Shipments</a>
@@ -24,13 +24,9 @@
                 {% include 'form.html' %}
             </div>
         </div>
-        <div class='tracked screen'>
-            <dif class='tracked-item'>
-                <h1 class='title'>My item</h1>
-                <p class='carrier'>USPS</p>
-                <p class='trackingid'>93D2 883A 832F NF09</p>
-                <p> Shipped - Expected delivery next week</p>
-            </dif>
+        <hr>
+        <div class='tracked row'>
+            {% include 'shipments.html' %}
         </div>
     </div>
   </body>
