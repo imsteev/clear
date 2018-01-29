@@ -5,11 +5,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', shipments=list(Shipment.query()))
+    all_shipments = list(Shipment.query())
+    print all_shipments
+    return render_template('index.html')
 
 @app.route('/shipments', methods=['GET'])
 def shipments():
-    return render_template('index.html', shipments=list(Shipment.query()))
+    return render_template('shipments.html', shipments=list(Shipment.query()))
 
 @app.route('/track', methods=['POST'])
 def track():

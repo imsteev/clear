@@ -11,8 +11,14 @@
 
 .track-item-form {
   text-align: left; }
+  .track-item-form input[type=text] {
+    text-indent: 5px; }
   .track-item-form input:focus, .track-item-form select {
     outline: none; }
+
+.pagetitle {
+  font-size: 36px;
+  text-align: center; }
 
 .tracked-item .trackingid {
   color: #ec213c;

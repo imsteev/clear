@@ -1,8 +1,14 @@
-{% for shipment in shipments %}
-<dif class='tracked-item col-6'>
-    <h1 class='name'>{{ shipment.name }}</h1>
-    <p class='carrier'>{{ shipment.carrier }}</p>
-    <p class='trackingid'>{{ shipment.tracking_id }}</p>
-    <p> Shipped - Expected delivery next week</p>
-</dif>
-{% endfor %}
+{% extends 'layout.html' %}
+{% block pagetitle %}Tracked Shipments{% endblock %}
+{% block content %}
+    <div class='tracked screen'>
+        {% for shipment in shipments %}
+        <div class='tracked-item'>
+            <h1 class='name'>{{ shipment.name }}</h1>
+            <p class='carrier'>{{ shipment.carrier }}</p>
+            <p class='trackingid'>{{ shipment.tracking_id }}</p>
+            <p> Shipped - Expected delivery next week</p>
+        </dif>
+        {% endfor %}
+    </div>
+{% endblock %}

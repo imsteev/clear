@@ -8,20 +8,26 @@
     margin-bottom: 10%;
     margin-left: 10%;
 }
-.tracked {
-
-}
 
 .tracking {
     outline: none;
 }
 .track-item-form {
     text-align: left;
+
+    input[type=text] {
+        text-indent: 5px;
+    }
     input:focus, select {
         outline: none;
     }
 }
 
+.pagetitle {
+    font-size: 36px;
+    text-align: center;
+
+}
 .tracked-item {
 
     .title {
