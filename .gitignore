@@ -1,4 +1,4 @@
 *.pyc
 .vscode
-watchstyle.sh
+*.sh
 .sass-cache
