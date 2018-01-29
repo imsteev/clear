@@ -3,15 +3,30 @@
     color: red;
 }
 
-.tracking {
+.screen {
     margin-top: 10%;
     margin-left: 10%;
+}
+.tracking {
     outline: none;
+}
+.track-item-form {
+    text-align: left;
+    input:focus, select {
+        outline: none;
+    }
+}
 
-    .track-item-form {
-        text-align: left;
-        input:focus, select {
-            outline: none;
-        }
+.tracked-item {
+    .title {
+
+    }
+
+    .carrier {
+
+    }
+
+    .trackingid {
+        
     }
 }

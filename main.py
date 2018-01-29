@@ -6,13 +6,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/form')
-def form():
-    return render_template('form.html')
-
 def register():
     pass
 
+@app.route('/track', methods=['POST'])
+def track():
+    carrier_name = request.form['carrier']
+    tracking_id = request.form['trackingid']
+
+    print carrier_name, tracking_id
+    
+    return render_template('index.html')
 @app.route('/submitted', methods=['POST'])
 def submitted_form():
     name = request.form['name']

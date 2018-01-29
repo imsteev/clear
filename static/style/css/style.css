@@ -1,13 +1,16 @@
 .slogan {
   color: red; }
 
-.tracking {
+.screen {
   margin-top: 10%;
-  margin-left: 10%;
+  margin-left: 10%; }
+
+.tracking {
   outline: none; }
-  .tracking .track-item-form {
-    text-align: left; }
-    .tracking .track-item-form input:focus, .tracking .track-item-form select {
-      outline: none; }
+
+.track-item-form {
+  text-align: left; }
+  .track-item-form input:focus, .track-item-form select {
+    outline: none; }
 
 /*# sourceMappingURL=style.css.map */
