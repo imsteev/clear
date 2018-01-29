@@ -1,3 +1,17 @@
-.description {
+
+.slogan {
     color: red;
+}
+
+.tracking {
+    margin-top: 10%;
+    margin-left: 10%;
+    outline: none;
+
+    .track-item-form {
+        text-align: left;
+        input:focus, select {
+            outline: none;
+        }
+    }
 }
