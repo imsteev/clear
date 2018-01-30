@@ -2,5 +2,4 @@
 .vscode
 *.sh
 .sass-cache
-usps.py
 uspsapi.json
