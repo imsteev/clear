@@ -8,6 +8,8 @@ from services import usps
 
 import json
 
+from google.appengine.ext import ndb
+
 login_manager = LoginManager()
 app = Flask(__name__)
 app.secret_key = "some secret keyyyyyyyy"
@@ -17,7 +19,7 @@ login_manager.init_app(app)
 def load_user(username):
     return User.query(User.username == username).get()
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
@@ -45,21 +47,20 @@ def login():
 
     username = request.form['username']
     password = request.form['password']
-    existing_user = User.query(User.username==username and User.password==password).get()
+    existing_user = User.query(User.username==username).get()
 
     if existing_user:
-        login_user(existing_user)
-        print('Logged in successfully.')
+        if existing_user.password == password:
+            login_user(existing_user)
+            return redirect(url_for('index'))
+        return render_template('login.html')
 
-        return redirect(url_for('index'))
-    elif username and password:
+    if username and password:
         new_user = User(username=username, password=password)
         new_user.put()
         login_user(new_user)
-        print('Registered and logged in successfully')
         return redirect(url_for('index'))
 
-    print('unable to login')
     return render_template('login.html')
 
 @app.route('/logout', methods=['GET'])
