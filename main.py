@@ -4,9 +4,13 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from models.Shipment import Shipment
 from models.User import User
 
+from services import usps
+
+import json
+
 login_manager = LoginManager()
 app = Flask(__name__)
-app.secret_key = "some secret key tf"
+app.secret_key = "some secret keyyyyyyyy"
 login_manager.init_app(app)
 
 @login_manager.user_loader
