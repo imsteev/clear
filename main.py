@@ -8,19 +8,23 @@ from services import usps
 
 import json
 
-from google.appengine.ext import ndb
-
 login_manager = LoginManager()
 app = Flask(__name__)
-app.secret_key = "some secret keyyyyyyyy"
+app.config.update(
+    DEBUG = True,
+    SECRET_KEY = "some secret keyyyyyyyy"
+)
 login_manager.init_app(app)
 
+# LOOK UP ANCESTOR QUERY
 @login_manager.user_loader
 def load_user(username):
-    return User.query(User.username == username).get()
+    return User.query(User.username == username, ancestor=User.ancestor_key).get()
 
 @app.route('/', methods=['GET'])
 def index():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
     return render_template('index.html')
 
 @app.route('/shipments', methods=['GET'])
@@ -56,11 +60,10 @@ def login():
         return render_template('login.html')
 
     if username and password:
-        new_user = User(username=username, password=password)
-        new_user.put()
+        new_user = User(parent=User.ancestor_key,username=username, password=password)
         login_user(new_user)
+        new_user.put()
         return redirect(url_for('index'))
-
     return render_template('login.html')
 
 @app.route('/logout', methods=['GET'])
@@ -72,4 +75,4 @@ def logout():
 @login_manager.unauthorized_handler
 def unauthorized():
     # do stuff
-    return "You are not authorized"
+    return "You are not authorized or not logged in"

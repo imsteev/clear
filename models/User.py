@@ -1,6 +1,7 @@
 from google.appengine.ext import ndb
 
 class User(ndb.Model):
+    ancestor_key = ndb.Key('User', 'UserKey')
     username = ndb.StringProperty()
     password = ndb.StringProperty()
 
