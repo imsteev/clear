@@ -1,14 +1,26 @@
 {% extends 'layout.html' %}
 {% block pagetitle %}Tracked Shipments{% endblock %}
 {% block content %}
-    <div class='tracked screen'>
-        {% for shipment in shipments %}
-        <div class='tracked-item'>
-            <h1 class='name'>{{ shipment.name }}</h1>
-            <p class='carrier'>{{ shipment.carrier }}</p>
-            <p class='trackingid'>{{ shipment.tracking_id }}</p>
-            <p> Shipped - Expected delivery next week</p>
-        </dif>
+    <div class='tracked row '>
+        <div class='col-6 inbound'>
+         {% for shipment in shipments %}
+            <div class='tracked-item screen'>
+                <h1 class='name'>{{ shipment.name }}</h1>
+                <p class='carrier'>{{ shipment.carrier }}</p>
+                <p class='trackingid'>{{ shipment.tracking_id }}</p>
+                <p> Shipped - Expected delivery next week</p>
+            </div>
         {% endfor %}
+        </div>
+        <div class='col-6 outbound'>
+            {% for shipment in shipments %}
+            <div class='tracked-item screen'>
+                <h1 class='name'>{{ shipment.name }}</h1>
+                <p class='carrier'>{{ shipment.carrier }}</p>
+                <p class='trackingid'>{{ shipment.tracking_id }}</p>
+                <p> Shipped - Expected delivery next week</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
